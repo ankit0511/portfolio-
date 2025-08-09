@@ -138,9 +138,6 @@ const Achievements: React.FC = () => {
                   <h3 className="text-2xl font-bold">
                     {achievements[currentIndex].title}
                   </h3>
-                  <span className="text-sm text-muted-foreground">
-                    {currentIndex + 1} / {achievements.length}
-                  </span>
                 </div>
                 <p className="text-muted-foreground text-sm mb-3">
                   {achievements[currentIndex].description}
@@ -162,22 +159,7 @@ const Achievements: React.FC = () => {
               </p>
             </div>
 
-            {/* Progress Indicator */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {achievements.map((_, index) => (
-                <motion.button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                      ? 'bg-black dark:bg-white scale-125'
-                      : 'bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600'
-                    }`}
-                  whileHover={{ scale: 1.2 }}
-                  whileTap={{ scale: 0.9 }}
-                />
-              ))}
-            </div>
-
+          
             {/* Navigation Controls - Inside Container */}
             <div className="flex justify-end gap-4 mt-6">
               <motion.button
@@ -200,5 +182,6 @@ const Achievements: React.FC = () => {
     </section>
   );
 };
+
 
 export default Achievements;
